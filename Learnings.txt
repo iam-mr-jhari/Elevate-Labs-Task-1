@@ -1,0 +1,38 @@
+Observation of command nmap -Pn demo.testfire.net
+
+Command and Purpose
+
+The command nmap -sn demo.testfire.net initiates a ping scan, which is used to determine whether a host is online without probing its ports. The -sn flag tells Nmap to skip port scanning and focus solely on host discovery. In this case, the scan confirms that the host demo.testfire.net (IP: 65.61.137.117) is up and reachable, with a latency of approximately 0.047 seconds. This type of scan is useful for quickly identifying active hosts in a network.
+
+IPv6 and Scan Duration
+
+The output also reveals an alternate IPv6 address: 64:ff9b::413d:8975. Although this address wasn't scanned, its presence suggests that the target supports both IPv4 and IPv6—known as dual-stack networking. Additionally, the scan took 33.45 seconds to complete, which is relatively long for a single host. This delay could be attributed to DNS resolution time, network congestion, or latency in reaching the target server.
+
+
+
+Observation of Command "nmap -p 1-65535 -T4 -A -v demo.testfire.net"
+
+
+Command Execution 
+
+The command nmap -p 1-65535 -T4 -A -v demo.testfire.net initiates an  intense scan  of all TCP ports on the target host. Here's a breakdown of its components:
+
+- -p 1-65535: Scans all 65,535 TCP ports, ensuring comprehensive coverage.
+- -T4: Uses an aggressive timing template to speed up the scan, suitable for stable networks.
+- -A: Enables advanced features like OS detection, version detection, script scanning, and traceroute.
+- -v: Activates verbose mode, providing detailed real-time feedback during the scan.
+
+This command is ideal for deep reconnaissance when you need full visibility into a target’s exposed services and system characteristics.
+
+ 
+
+Scan Results 
+
+The scan was conducted using  Nmap version 7.97  and began at  21:01 IST on August 4, 2025 . A total of  158 NSE scripts  were loaded, indicating a rich set of scanning capabilities. The target domain demo.testfire.net resolved to the IP address 65.61.137.117.
+
+Three open ports were discovered:
+-  Port 8080/tcp  – Often used for web services or proxy servers.
+-  Port 443/tcp  – Standard port for HTTPS, indicating secure web traffic.
+-  Port 80/tcp  – Standard port for HTTP, suggesting a web server is running.
+
+These findings suggest the host is actively serving web content over both secure and non-secure channels, and possibly running additional services on port 8080.
